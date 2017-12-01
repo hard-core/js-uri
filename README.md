@@ -20,6 +20,7 @@ console.log("URI AFTER: %s", uriObject);
 * path
 * query
 * fragment
+
 The object does not have mandatory properties, any combination of values will give a valid URI at the output.
 
 ------------------------------------------------
