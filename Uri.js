@@ -81,7 +81,34 @@ function Uri(uriString) {
                 (instance.query ? '?' + instance.query : '')+
                 (instance.fragment ? '#' + instance.fragment : '');
         }
-    })
+    });
+
 }
 
-module.exports = Uri;
+
+// HELPERS //
+
+
+/**
+ * Parse URI string
+ * @param {string} uri
+ * @returns {Uri}
+ */
+Uri.parse = function (uri) {
+    return new Uri(uri);
+};
+
+
+/**
+ * Build URI
+ * @param {Uri} uri
+ * @returns {string}
+ */
+Uri.build = function(uri) {
+    if (uri.constructor !== Uri)
+        throw Error('Invalid type');
+    return uri.toString();
+};
+
+//node module
+//module.exports = Uri;
