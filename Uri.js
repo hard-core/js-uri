@@ -82,6 +82,26 @@ function Uri(uriString) {
                 (instance.fragment ? '#' + instance.fragment : '');
         }
     });
+    
+    
+    // ORIGIN //
+    Object.defineProperty(instance, 'origin', {
+        get: function () {
+            return '' +
+                (instance.scheme ? instance.scheme + ':' : '')+
+                (instance.authority ? '//' + instance.authority : '');
+        }
+    });
+
+    // RESOURCE //
+    Object.defineProperty(instance, 'resource', {
+        get: function () {
+            return '' +
+                (instance.path || '/')+
+                (instance.query ? '?' + instance.query : '')+
+                (instance.fragment ? '#' + instance.fragment : '');
+        }
+    });
 
 }
 
